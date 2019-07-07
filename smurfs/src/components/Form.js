@@ -13,16 +13,20 @@ class Form extends React.Component {
     console.log(this.state);
   }
 
-  addSmurf = event => {
-    event.preventDefault();
-    console.log("Add smurf button pressed")
+  submitSmurf = event => {
+    this.props.addSmurf(event, this.state);
+    this.setState({
+      name: '',
+      age: '',
+      height: ''
+    });
   }
 
   render() {
     return(
       <div>
         <h2>Add Smurf</h2>
-        <form>
+        <form onSubmit={this.submitSmurf} >
         <input 
           type="text"
           name="name"
@@ -47,7 +51,7 @@ class Form extends React.Component {
           onChange={this.handleChanges}
         />
 
-        <button onClick={this.addSmurf}>Submit</button>
+        <button>Submit</button>
         </form>
       </div>
     )

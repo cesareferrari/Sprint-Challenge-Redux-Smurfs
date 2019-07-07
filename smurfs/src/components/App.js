@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getSmurfs } from '../actions';
+import { getSmurfs, addSmurf } from '../actions';
 import './App.css';
 import Smurf from './Smurf';
 import Form from './Form';
@@ -17,14 +17,26 @@ class App extends Component {
     this.props.getSmurfs();
   }
 
+  addSmurf = (event, smurf) => {
+    event.preventDefault();
+
+    const newSmurf = {
+      name: smurf.name,
+      age: parseInt(smurf.age, 10),
+      height: smurf.height
+    };
+
+    this.props.addSmurf(newSmurf);
+  }
+
   render() {
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
 
-        {this.props.smurfs.map(smurf => <Smurf smurf={smurf} />)}
+        {this.props.smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id} />)}
 
-        <Form />
+        <Form addSmurf={this.addSmurf} />
 
       </div>
     );
@@ -40,4 +52,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getSmurfs})(App);
+export default connect(mapStateToProps, {addSmurf, getSmurfs})(App);
