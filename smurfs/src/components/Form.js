@@ -24,7 +24,7 @@ class Form extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="add-smurf-form">
         <h2>Add Smurf</h2>
         <form onSubmit={this.submitSmurf} >
         <input 

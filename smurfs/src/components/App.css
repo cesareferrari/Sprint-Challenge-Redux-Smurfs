@@ -1,28 +1,70 @@
 .App {
   text-align: center;
+  background-color: lightblue;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1 {
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.smurf-list {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.smurf {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 20px;
+  border: 1px solid blue;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.smurf h4 {
+  margin: 0;
+  text-align: left;
+  width: 30%;
+}
+
+.smurf-details {
+  text-align: left;
+  width: 70%;
+  line-height: 1.5rem;
+}
+
+input[type="text"] {
+  font-size: 1.2rem;
+  padding: 4px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.add-smurf-form {
+  width: 40%;
+  margin: auto;
+  padding-bottom: 3rem;
+}
+
+button {
+  background-color: darkblue;
   color: white;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
 }
 
-.App-title {
-  font-size: 1.5em;
+button:hover {
+  background-color: blue;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button:active {
+  background-color: black;
 }
