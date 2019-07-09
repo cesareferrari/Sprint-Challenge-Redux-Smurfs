@@ -23,8 +23,41 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+    In Redux, the `store` is the place where most of the state of the application is saved and updated.
+    `actions` are objects that describe how to modify the state.
+    A `reducer` is the function that actually modifies the state in the store,
+    depending on the action that's being called (or the action type).
+    The `store` is knows as the single source of truth because all the important
+    state for the application is saved there.
+    Some state that is not relevant to the whole application but is only relevant to
+    some components, is not managed in the Redux store, but it's managed directly by
+    components or their parents.
+
+
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+    Application state is the state that is relevant to the overall application,
+    while component state is the state that is relevant to only some components,
+    but does not affect the application as a whole.
+    For example, a form field may have a default value that is set in the component
+    state because it's not relevant to the whole application.
+
+
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+    Redux thunk allows us to introduce asyncronous code in React. We can fire off an
+    asyncronous connection and wait for the returned data to be displayed by the
+    React application. When we use Thunk we need to change our action creators to
+    return a function instead of an object. The function in turn will return an
+    object.
+
+
+
+
 
 ## Project Set Up
 
